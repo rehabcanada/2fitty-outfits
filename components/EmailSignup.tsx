@@ -18,8 +18,8 @@ export default function EmailSignup() {
   }
 
   return (
-    <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 lg:px-8">
-      <h2 className="mb-2 text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
+    <section className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 md:py-28 lg:px-8">
+      <h2 className="section-heading mb-2">
         Get notified about new 2Fitty releases
       </h2>
       <p className="mx-auto mb-6 max-w-md text-sm text-white/60">
@@ -39,11 +39,11 @@ export default function EmailSignup() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="w-full rounded-full border border-white/20 bg-brand-charcoal px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-white"
+            className="w-full rounded-full border border-brand-silver/20 bg-brand-charcoal px-4 py-2.5 text-sm text-white placeholder:text-white/40 transition-colors duration-200 focus:border-brand-silver"
           />
           <button
             type="submit"
-            className="shrink-0 rounded-full bg-white px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-brand-silverlight"
+            className="btn-primary shrink-0"
           >
             Notify Me
           </button>

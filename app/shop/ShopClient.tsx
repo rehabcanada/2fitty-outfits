@@ -54,8 +54,8 @@ export default function ShopClient() {
   }, [filters]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="mb-8 text-3xl font-bold uppercase tracking-wide text-white">Shop</h1>
+    <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
+      <h1 className="mb-8 text-3xl font-black uppercase tracking-tight text-white sm:text-4xl">Shop</h1>
       <ProductFilters
         filters={filters}
         onChange={handleChange}

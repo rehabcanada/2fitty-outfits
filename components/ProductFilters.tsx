@@ -51,7 +51,7 @@ export default function ProductFilters({
           value={filters.search}
           onChange={(e) => onChange({ search: e.target.value })}
           placeholder="Search by name..."
-          className="w-full max-w-md rounded-full border border-white/20 bg-brand-charcoal px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-white"
+          className="w-full max-w-md rounded-full border border-brand-silver/20 bg-brand-charcoal px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-brand-silver"
         />
       </div>
 
@@ -65,7 +65,7 @@ export default function ProductFilters({
             className={`rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors ${
               filters.category === chip
                 ? "border-white bg-white text-brand-black"
-                : "border-white/25 text-white/70 hover:border-white hover:text-white"
+                : "border-brand-silver/25 text-white/70 hover:border-brand-silver hover:text-white"
             }`}
           >
             {chip}
@@ -82,7 +82,7 @@ export default function ProductFilters({
             id="filter-size"
             value={filters.size}
             onChange={(e) => onChange({ size: e.target.value })}
-            className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-brand-silver"
           >
             <option value="Any">Any size</option>
             {sizes.map((s) => (
@@ -101,7 +101,7 @@ export default function ProductFilters({
             id="filter-colour"
             value={filters.colour}
             onChange={(e) => onChange({ colour: e.target.value })}
-            className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-brand-silver"
           >
             <option value="Any">Any colour</option>
             {colours.map((c) => (
@@ -136,7 +136,7 @@ export default function ProductFilters({
             id="filter-availability"
             value={filters.availability}
             onChange={(e) => onChange({ availability: e.target.value })}
-            className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-brand-silver"
           >
             {AVAILABILITIES.map((a) => (
               <option key={a} value={a}>
@@ -154,7 +154,7 @@ export default function ProductFilters({
             id="filter-sort"
             value={filters.sort}
             onChange={(e) => onChange({ sort: e.target.value })}
-            className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-brand-silver"
           >
             {SORT_OPTIONS.map((s) => (
               <option key={s} value={s}>

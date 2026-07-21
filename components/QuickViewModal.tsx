@@ -47,7 +47,7 @@ export default function QuickViewModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={`Quick view of ${product.name}`}>
       <button aria-label="Close quick view" className="absolute inset-0 bg-black/80" onClick={onClose} />
-      <div className="relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-xl border border-white/10 bg-brand-charcoal sm:flex-row">
+      <div className="relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-brand-silver/10 bg-brand-charcoal sm:flex-row">
         <button
           type="button"
           onClick={onClose}
@@ -113,7 +113,7 @@ export default function QuickViewModal({
               id="quickview-colour"
               value={colour}
               onChange={(e) => setColour(e.target.value)}
-              className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2 text-sm text-white focus:border-white"
+              className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2 text-sm text-white focus:border-brand-silver"
             >
               {product.colours.map((c) => (
                 <option key={c} value={c}>
@@ -131,7 +131,7 @@ export default function QuickViewModal({
               id="quickview-size"
               value={size}
               onChange={(e) => setSize(e.target.value)}
-              className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2 text-sm text-white focus:border-white"
+              className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2 text-sm text-white focus:border-brand-silver"
             >
               {product.sizes.map((s) => (
                 <option key={s} value={s}>
@@ -145,14 +145,14 @@ export default function QuickViewModal({
             <Link
               href={`/order-request?product=${product.slug}&size=${encodeURIComponent(size)}&colour=${encodeURIComponent(colour)}&price=${product.price}&image=${encodeURIComponent(product.images[0])}`}
               onClick={onClose}
-              className="rounded-full bg-white px-4 py-2.5 text-center text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-silverlight"
+              className="btn-primary text-center"
             >
               Request to Purchase
             </Link>
             <button
               type="button"
               onClick={handleAddToBag}
-              className="rounded-full border border-white/30 px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-white hover:border-white hover:bg-white/10"
+              className="btn-secondary"
             >
               Add to Request Bag
             </button>

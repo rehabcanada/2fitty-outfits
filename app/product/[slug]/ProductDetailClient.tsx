@@ -36,7 +36,7 @@ export default function ProductDetailClient({
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         <div className="flex flex-col gap-3">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-white/10">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-brand-silver/10">
             <Image
               src={product.images[activeImage]}
               alt={`${product.name}, view ${activeImage + 1}`}
@@ -85,7 +85,7 @@ export default function ProductDetailClient({
                   aria-label={`View image ${i + 1} of ${product.name}`}
                   aria-current={activeImage === i}
                   className={`relative h-20 w-16 overflow-hidden rounded-lg border ${
-                    activeImage === i ? "border-white" : "border-white/20"
+                    activeImage === i ? "border-brand-silver" : "border-brand-silver/20"
                   }`}
                 >
                   <Image src={img} alt="" fill sizes="64px" className="object-cover" />
@@ -105,7 +105,7 @@ export default function ProductDetailClient({
           {product.productStatus !== "None" && (
             <div className="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wide">
               <span className="rounded-full bg-brand-silver px-3 py-1 text-brand-black">{product.productStatus}</span>
-              <span className="rounded-full border border-white/30 px-3 py-1 text-white">{product.availability}</span>
+              <span className="rounded-full border border-brand-silver/30 px-3 py-1 text-white">{product.availability}</span>
             </div>
           )}
 
@@ -131,7 +131,7 @@ export default function ProductDetailClient({
               id="pd-colour"
               value={colour}
               onChange={(e) => setColour(e.target.value)}
-              className="w-full max-w-xs rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-white"
+              className="w-full max-w-xs rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-brand-silver"
             >
               {product.colours.map((c) => (
                 <option key={c} value={c}>
@@ -149,7 +149,7 @@ export default function ProductDetailClient({
               id="pd-size"
               value={size}
               onChange={(e) => setSize(e.target.value)}
-              className="w-full max-w-xs rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-white"
+              className="w-full max-w-xs rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-brand-silver"
             >
               {product.sizes.map((s) => (
                 <option key={s} value={s}>
@@ -164,20 +164,20 @@ export default function ProductDetailClient({
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={`/order-request?product=${product.slug}&size=${encodeURIComponent(size)}&colour=${encodeURIComponent(colour)}&price=${product.price}&image=${encodeURIComponent(product.images[0])}`}
-              className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-brand-silverlight"
+              className="btn-primary text-center"
             >
               Request to Purchase
             </Link>
             <button
               type="button"
               onClick={handleAddToBag}
-              className="rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-white/10"
+              className="btn-secondary"
             >
               Add to Request Bag
             </button>
           </div>
 
-          <div className="mt-2 flex flex-col gap-2 rounded-lg border border-white/10 bg-brand-charcoal p-4 text-xs text-white/60">
+          <div className="mt-2 flex flex-col gap-2 rounded-lg border border-brand-silver/10 bg-brand-charcoal p-4 text-xs text-white/60">
             <p>
               <span className="font-bold text-white">Size Guide:</span>{" "}
               {product.sizeGuideInfo}

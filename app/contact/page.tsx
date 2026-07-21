@@ -17,7 +17,7 @@ export default function ContactPage() {
         reach out directly -- we typically respond within [24-48 hours].
       </p>
 
-      <div className="mb-10 grid grid-cols-1 gap-4 rounded-xl border border-white/10 bg-brand-charcoal p-6 text-sm text-white/70 sm:grid-cols-2">
+      <div className="mb-10 grid grid-cols-1 gap-4 rounded-xl border border-brand-silver/10 bg-brand-charcoal p-6 text-sm text-white/70 sm:grid-cols-2">
         <div>
           <p className="text-xs font-bold uppercase tracking-widest2 text-brand-silver">Email</p>
           {/* Placeholder email -- update before launch */}

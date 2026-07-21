@@ -185,7 +185,7 @@ export default function OrderRequestForm() {
 
   if (submitted) {
     return (
-      <div className="mx-auto max-w-xl rounded-xl border border-white/10 bg-brand-charcoal p-8 text-center">
+      <div className="mx-auto max-w-xl rounded-xl border border-brand-silver/10 bg-brand-charcoal p-8 text-center">
         <h1 className="mb-3 text-2xl font-bold text-white">Purchase Request Received</h1>
         <p className="text-sm text-white/70">
           Your request has been received. 2Fitty Outfits will contact you to
@@ -199,7 +199,7 @@ export default function OrderRequestForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="mx-auto flex max-w-2xl flex-col gap-6">
       {productSummary && (
-        <div className="rounded-lg border border-white/10 bg-brand-charcoal p-4 text-sm text-white/80">
+        <div className="rounded-lg border border-brand-silver/10 bg-brand-charcoal p-4 text-sm text-white/80">
           <span className="block text-xs font-bold uppercase tracking-widest2 text-brand-silver">
             Requesting
           </span>
@@ -219,7 +219,7 @@ export default function OrderRequestForm() {
             onChange={(e) => update("fullName", e.target.value)}
             aria-invalid={!!errors.fullName}
             aria-describedby={errors.fullName ? "fullName-error" : undefined}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
           {errors.fullName && (
             <p id="fullName-error" className="mt-1 text-xs text-red-400">
@@ -239,7 +239,7 @@ export default function OrderRequestForm() {
             onChange={(e) => update("email", e.target.value)}
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
           {errors.email && (
             <p id="email-error" className="mt-1 text-xs text-red-400">
@@ -257,7 +257,7 @@ export default function OrderRequestForm() {
             type="tel"
             value={form.phone}
             onChange={(e) => update("phone", e.target.value)}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
         </div>
 
@@ -269,7 +269,7 @@ export default function OrderRequestForm() {
             id="preferredContact"
             value={form.preferredContact}
             onChange={(e) => update("preferredContact", e.target.value)}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           >
             {CONTACT_METHODS.map((m) => (
               <option key={m} value={m}>
@@ -290,7 +290,7 @@ export default function OrderRequestForm() {
             onChange={(e) => update("city", e.target.value)}
             aria-invalid={!!errors.city}
             aria-describedby={errors.city ? "city-error" : undefined}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
           {errors.city && (
             <p id="city-error" className="mt-1 text-xs text-red-400">
@@ -310,7 +310,7 @@ export default function OrderRequestForm() {
             onChange={(e) => update("region", e.target.value)}
             aria-invalid={!!errors.region}
             aria-describedby={errors.region ? "region-error" : undefined}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
           {errors.region && (
             <p id="region-error" className="mt-1 text-xs text-red-400">
@@ -328,7 +328,7 @@ export default function OrderRequestForm() {
             type="text"
             value={form.colour}
             onChange={(e) => update("colour", e.target.value)}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
         </div>
 
@@ -341,7 +341,7 @@ export default function OrderRequestForm() {
             type="text"
             value={form.size}
             onChange={(e) => update("size", e.target.value)}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
         </div>
 
@@ -355,7 +355,7 @@ export default function OrderRequestForm() {
             min={1}
             value={form.quantity}
             onChange={(e) => update("quantity", Number(e.target.value))}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
         </div>
 
@@ -367,7 +367,7 @@ export default function OrderRequestForm() {
             id="fulfillment"
             value={form.fulfillment}
             onChange={(e) => update("fulfillment", e.target.value)}
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           >
             {FULFILLMENT_OPTIONS.map((f) => (
               <option key={f} value={f}>
@@ -387,7 +387,7 @@ export default function OrderRequestForm() {
             value={form.instagram}
             onChange={(e) => update("instagram", e.target.value)}
             placeholder="@yourhandle"
-            className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+            className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
           />
         </div>
       </div>
@@ -402,11 +402,11 @@ export default function OrderRequestForm() {
           value={form.notes}
           onChange={(e) => update("notes", e.target.value)}
           placeholder="Bundle requests, questions about sizing, anything else we should know."
-          className="w-full rounded-lg border border-white/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-white"
+          className="w-full rounded-lg border border-brand-silver/20 bg-brand-black px-3 py-2.5 text-sm text-white focus:border-brand-silver"
         />
       </div>
 
-      <div className="flex flex-col gap-3 rounded-lg border border-white/10 bg-brand-charcoal p-4">
+      <div className="flex flex-col gap-3 rounded-lg border border-brand-silver/10 bg-brand-charcoal p-4">
         <label className="flex items-start gap-3 text-sm text-white/80">
           <input
             type="checkbox"
@@ -414,7 +414,7 @@ export default function OrderRequestForm() {
             onChange={(e) => update("understandRequest", e.target.checked)}
             aria-invalid={!!errors.understandRequest}
             aria-describedby={errors.understandRequest ? "understandRequest-error" : undefined}
-            className="mt-0.5 h-4 w-4 shrink-0 rounded border-white/30 bg-brand-black"
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-brand-silver/30 bg-brand-black"
           />
           <span>
             I understand that this is a purchase request and no payment has been collected.
@@ -433,7 +433,7 @@ export default function OrderRequestForm() {
             onChange={(e) => update("agreeContact", e.target.checked)}
             aria-invalid={!!errors.agreeContact}
             aria-describedby={errors.agreeContact ? "agreeContact-error" : undefined}
-            className="mt-0.5 h-4 w-4 shrink-0 rounded border-white/30 bg-brand-black"
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-brand-silver/30 bg-brand-black"
           />
           <span>I agree to be contacted by 2Fitty Outfits about this request.</span>
         </label>
@@ -453,7 +453,7 @@ export default function OrderRequestForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-brand-silverlight disabled:cursor-not-allowed disabled:opacity-60"
+        className="btn-primary w-full"
       >
         {submitting ? "Sending Request..." : "Request to Purchase"}
       </button>

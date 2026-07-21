@@ -24,7 +24,7 @@ export default function SocialGallery() {
       </div>
       <div className="grid grid-cols-3 gap-2 sm:gap-4 md:grid-cols-6">
         {GALLERY_SEEDS.map((seed) => (
-          <div key={seed} className="relative aspect-square overflow-hidden rounded-lg border border-white/10">
+          <div key={seed} className="relative aspect-square overflow-hidden rounded-lg border border-brand-silver/10">
             <Image
               src={`https://picsum.photos/seed/${seed}/300/300`}
               alt="2Fitty Outfits community photo placeholder"
@@ -41,7 +41,7 @@ export default function SocialGallery() {
           href="https://instagram.com/2fittyoutfits"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-white/10"
+          className="btn-secondary"
         >
           Follow @2FittyOutfits
         </a>

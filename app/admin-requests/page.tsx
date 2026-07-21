@@ -135,7 +135,7 @@ export default function AdminRequestsPage() {
         </p>
         <button
           onClick={login}
-          className="rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-silverlight"
+          className="btn-primary"
         >
           Log In
         </button>
@@ -159,7 +159,7 @@ export default function AdminRequestsPage() {
         </div>
         <button
           onClick={logout}
-          className="rounded-full border border-white/30 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white hover:border-white"
+          className="btn-secondary-sm"
         >
           Log Out
         </button>
@@ -174,7 +174,7 @@ export default function AdminRequestsPage() {
       )}
 
       {note && !error && (
-        <p className="mb-6 rounded-lg border border-white/10 bg-brand-charcoal px-4 py-3 text-sm text-white/60">
+        <p className="mb-6 rounded-lg border border-brand-silver/10 bg-brand-charcoal px-4 py-3 text-sm text-white/60">
           {note}
         </p>
       )}
@@ -184,7 +184,7 @@ export default function AdminRequestsPage() {
       )}
 
       {submissions.length > 0 && (
-        <div className="overflow-x-auto rounded-lg border border-white/10">
+        <div className="overflow-x-auto rounded-lg border border-brand-silver/10">
           <table className="min-w-full divide-y divide-white/10 text-left text-sm">
             <thead className="bg-brand-charcoal text-xs uppercase tracking-wide text-white/60">
               <tr>

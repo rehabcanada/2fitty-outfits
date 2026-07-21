@@ -52,7 +52,7 @@ export default function ContactClient() {
 
   if (submitted) {
     return (
-      <div className="rounded-xl border border-white/10 bg-brand-charcoal p-8 text-center">
+      <div className="rounded-xl border border-brand-silver/10 bg-brand-charcoal p-8 text-center">
         <h2 className="mb-2 text-xl font-bold text-white">Message Sent</h2>
         <p className="text-sm text-white/70">
           Thanks for reaching out -- we&apos;ll get back to you as soon as we
@@ -74,7 +74,7 @@ export default function ContactClient() {
           value={form.name}
           onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
           aria-invalid={!!errors.name}
-          className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-white"
+          className="w-full rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-brand-silver"
         />
         {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
       </div>
@@ -89,7 +89,7 @@ export default function ContactClient() {
           value={form.email}
           onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
           aria-invalid={!!errors.email}
-          className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-white"
+          className="w-full rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-brand-silver"
         />
         {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
       </div>
@@ -105,7 +105,7 @@ export default function ContactClient() {
           onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
           aria-invalid={!!errors.message}
           placeholder="Questions about sizing, availability, bundles, shipping, or pickup -- ask away."
-          className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-white"
+          className="w-full rounded-lg border border-brand-silver/20 bg-brand-charcoal px-3 py-2.5 text-sm text-white focus:border-brand-silver"
         />
         {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
       </div>
@@ -115,7 +115,7 @@ export default function ContactClient() {
       <button
         type="submit"
         disabled={submitting}
-        className="self-start rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-brand-silverlight disabled:cursor-not-allowed disabled:opacity-50"
+        className="btn-primary self-start"
       >
         {submitting ? "Sending..." : "Send Message"}
       </button>

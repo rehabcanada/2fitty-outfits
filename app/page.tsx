@@ -37,22 +37,18 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
-            New Releases
-          </h2>
-          <Link href="/shop?category=New%20Releases" className="text-sm font-semibold text-brand-silver hover:text-white">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+        <div className="mb-10 flex items-center justify-between">
+          <h2 className="section-heading">New Releases</h2>
+          <Link href="/shop?category=New%20Releases" className="text-sm font-semibold text-brand-silver transition-colors duration-200 hover:text-white">
             View All
           </Link>
         </div>
         <ProductGrid products={newReleases} />
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8">
-        <h2 className="mb-4 text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
-          Built for Everyday Rotation
-        </h2>
+      <section className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 md:py-28 lg:px-8">
+        <h2 className="section-heading mb-4">Built for Everyday Rotation</h2>
         <p className="text-sm leading-relaxed text-white/70 sm:text-base">
           2Fitty Outfits creates clean, relaxed streetwear that can be worn
           separately or combined into complete fits. Each release focuses on
@@ -62,9 +58,9 @@ export default function Home() {
       </section>
 
       {matchingSet && (
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-8 rounded-xl border border-white/10 bg-brand-charcoal p-6 sm:p-10 lg:grid-cols-2">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl">
+        <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+          <div className="grid grid-cols-1 items-center gap-8 rounded-lg border border-brand-silver/10 bg-brand-charcoal p-6 sm:p-10 lg:grid-cols-2">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg">
               <Image
                 src={matchingSet.images[0]}
                 alt={matchingSet.name}
@@ -74,10 +70,8 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col gap-4">
-              <span className="text-xs font-bold uppercase tracking-widest2 text-brand-silver">
-                Featured Matching Set
-              </span>
-              <h2 className="text-2xl font-bold text-white sm:text-3xl">{matchingSet.name}</h2>
+              <span className="kicker">Featured Matching Set</span>
+              <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl md:text-4xl">{matchingSet.name}</h2>
               <p className="text-sm leading-relaxed text-white/70">{matchingSet.shortDescription}</p>
               <p className="text-lg font-bold text-white">${matchingSet.price} CAD</p>
               <p className="text-xs text-white/50">
@@ -88,14 +82,11 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href={`/order-request?product=${matchingSet.slug}&size=${encodeURIComponent(matchingSet.sizes[0])}&colour=${encodeURIComponent(matchingSet.colours[0])}&price=${matchingSet.price}&image=${encodeURIComponent(matchingSet.images[0])}`}
-                  className="rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-brand-silverlight"
+                  className="btn-primary"
                 >
                   Request to Purchase
                 </Link>
-                <Link
-                  href={`/product/${matchingSet.slug}`}
-                  className="rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-white/10"
-                >
+                <Link href={`/product/${matchingSet.slug}`} className="btn-secondary">
                   View Details
                 </Link>
               </div>
@@ -104,14 +95,12 @@ export default function Home() {
         </section>
       )}
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="mb-10 text-center text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
-          How Ordering Works
-        </h2>
+      <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+        <h2 className="section-heading mb-12 text-center">How Ordering Works</h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {STEPS.map((step, i) => (
             <div key={step.title} className="flex flex-col items-center text-center">
-              <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-sm font-bold text-white">
+              <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-brand-silver/30 text-sm font-bold text-white">
                 {i + 1}
               </span>
               <h3 className="mb-2 text-base font-bold text-white">{step.title}</h3>

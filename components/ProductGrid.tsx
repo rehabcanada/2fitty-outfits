@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 export default function ProductGrid({ products }: { products: Product[] }) {
   if (products.length === 0) {
     return (
-      <div className="rounded-xl border border-white/10 bg-brand-charcoal p-10 text-center text-white/60">
+      <div className="rounded-xl border border-brand-silver/10 bg-brand-charcoal p-10 text-center text-white/60">
         No products match your filters right now. Try clearing a filter or
         checking back soon for new arrivals.
       </div>

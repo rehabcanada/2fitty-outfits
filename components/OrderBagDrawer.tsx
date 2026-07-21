@@ -36,8 +36,8 @@ export default function OrderBagDrawer() {
   return (
     <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label="Request bag">
       <button aria-label="Close request bag" className="absolute inset-0 bg-black/70" onClick={closeDrawer} />
-      <div className="absolute right-0 top-0 flex h-full w-full max-w-md flex-col border-l border-white/10 bg-brand-charcoal">
-        <div className="flex items-center justify-between border-b border-white/10 p-5">
+      <div className="absolute right-0 top-0 flex h-full w-full max-w-md flex-col border-l border-brand-silver/10 bg-brand-charcoal">
+        <div className="flex items-center justify-between border-b border-brand-silver/10 p-5">
           <h2 className="text-sm font-bold uppercase tracking-widest2 text-white">Request Bag</h2>
           <button
             type="button"
@@ -60,7 +60,7 @@ export default function OrderBagDrawer() {
           ) : (
             <ul className="flex flex-col gap-4">
               {items.map((item) => (
-                <li key={`${item.productId}-${item.colour}-${item.size}`} className="flex gap-3 border-b border-white/10 pb-4">
+                <li key={`${item.productId}-${item.colour}-${item.size}`} className="flex gap-3 border-b border-brand-silver/10 pb-4">
                   <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded-lg">
                     <Image src={item.image} alt={item.name} fill sizes="80px" className="object-cover" />
                   </div>
@@ -78,7 +78,7 @@ export default function OrderBagDrawer() {
                         min={1}
                         value={item.quantity}
                         onChange={(e) => updateQuantity(item.productId, item.size, Number(e.target.value), item.colour)}
-                        className="w-14 rounded border border-white/20 bg-brand-black px-2 py-1 text-xs text-white"
+                        className="w-14 rounded border border-brand-silver/20 bg-brand-black px-2 py-1 text-xs text-white"
                       />
                       <span className="ml-auto text-sm font-bold text-white">
                         ${(item.price * item.quantity).toFixed(2)} CAD
@@ -98,7 +98,7 @@ export default function OrderBagDrawer() {
           )}
         </div>
 
-        <div className="border-t border-white/10 p-5">
+        <div className="border-t border-brand-silver/10 p-5">
           <div className="mb-2 flex items-center justify-between text-sm">
             <span className="text-white/70">Estimated Product Total</span>
             <span className="font-bold text-white">${estimatedTotal.toFixed(2)} CAD</span>
@@ -111,7 +111,7 @@ export default function OrderBagDrawer() {
             type="button"
             disabled={items.length === 0}
             onClick={handleSubmitRequest}
-            className="w-full rounded-full bg-white px-4 py-3 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-brand-silverlight disabled:cursor-not-allowed disabled:opacity-40"
+            className="btn-primary w-full"
           >
             Submit Purchase Request
           </button>

@@ -40,7 +40,7 @@ export default function MobileMenu({
         className="absolute inset-0 bg-black/70"
         onClick={onClose}
       />
-      <div className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 border-l border-white/10 bg-brand-charcoal p-6">
+      <div className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 border-l border-brand-silver/10 bg-brand-charcoal p-6">
         <div className="mb-6 flex items-center justify-between">
           <span className="text-sm font-semibold uppercase tracking-widest2 text-brand-silver">
             Menu
@@ -62,7 +62,7 @@ export default function MobileMenu({
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="rounded-lg px-3 py-3 text-base font-medium text-white/90 hover:bg-white/5 hover:text-white"
+              className="rounded-lg px-3 py-3 text-base font-medium text-white/90 transition-colors duration-200 hover:bg-white/5 hover:text-white"
             >
               {link.label}
             </Link>

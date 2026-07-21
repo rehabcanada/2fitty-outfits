@@ -17,7 +17,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-brand-black">
+    <footer className="border-t border-brand-silver/10 bg-brand-black">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="flex flex-col gap-4">
           <Logo />
@@ -78,7 +78,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="border-t border-white/10 px-4 py-6 text-center text-xs text-white/50 sm:px-6 lg:px-8">
+      <div className="border-t border-brand-silver/10 px-4 py-6 text-center text-xs text-white/50 sm:px-6 lg:px-8">
         <p>
           2Fitty Outfits &mdash; EST. 2024. &copy; {year} 2Fitty Outfits. All rights reserved.
         </p>
