@@ -66,6 +66,7 @@ collections:
               - label: "Images"
                 name: "images"
                 widget: "list"
+                hint: "Upload in this order for best results: 1) Product photo alone (flat lay or ghost mannequin), 2) Model wearing it - front, 3) Model wearing it - back. You can add more or fewer if needed."
                 field: { label: "Image", name: "image", widget: "image" }
               - { label: "Size Guide Info", name: "sizeGuideInfo", widget: "string" }
               - { label: "Instagram Post URL (optional)", name: "instagramPostUrl", widget: "string", required: false }

@@ -17,7 +17,6 @@ confirms directly with the buyer (via email/phone/Instagram).
 │   ├── page.tsx                 Homepage
 │   ├── globals.css              Tailwind base styles + focus-visible rules
 │   ├── shop/                    /shop -- catalogue with filters + search
-│   ├── lookbook/                /lookbook -- editorial lookbook page
 │   ├── product/[slug]/          /product/[slug] -- product detail page
 │   ├── about/                   /about
 │   ├── contact/                 /contact (form + placeholders)
@@ -137,12 +136,27 @@ change.
 ## Replacing Product Images
 
 Every product currently uses placeholder images from `https://picsum.photos`
-(seeded by slug, so they're stable across reloads). To use real photos:
+(seeded by slug, so they're stable across reloads). `images` is a plain,
+flexible list -- there is no fixed number of slots -- but the recommended
+workflow for real photography is **3 photos per product, in this order**:
+
+1. The product/garment alone (flat lay or ghost mannequin style).
+2. A model wearing it, front view.
+3. The same model wearing it, back view.
+
+You can use more or fewer than 3 if needed; the shop grid, product detail
+gallery, and quick view all handle any number of images gracefully (the
+first image in the list is always used as the thumbnail/default shot, so
+put the clean product-alone shot first). The Decap CMS admin panel
+(`/admin`) shows this same guidance as a hint on the Images field.
+
+To add real photos:
 
 1. Add your image files to `public/products/` (create the folder), e.g.
    `public/products/2fitty-core-heavyweight-hoodie-1.jpg`.
 2. In `lib/products.ts`, update that product's `images` array to point at the
-   local paths, e.g. `images: ["/products/2fitty-core-heavyweight-hoodie-1.jpg"]`.
+   local paths, e.g.
+   `images: ["/products/2fitty-core-heavyweight-hoodie-1.jpg", "/products/2fitty-core-heavyweight-hoodie-2.jpg", "/products/2fitty-core-heavyweight-hoodie-3.jpg"]`.
 3. Local images in `/public` work with `next/image` out of the box. If you
    instead use external image URLs, add the domain to
    `images.remotePatterns` in `next.config.mjs` (picsum.photos is already
@@ -216,8 +230,6 @@ Before taking this live, make sure to:
       2F monogram / wordmark file in `public/`.
 - [ ] Replace placeholder product photos (`picsum.photos` URLs in
       `lib/products.ts`) with real product photography.
-- [ ] Replace placeholder Lookbook photography (`picsum.photos` seeds in
-      `app/lookbook/page.tsx` and `app/page.tsx`) with real campaign images.
 - [ ] Confirm real fabric/manufacturing details and replace the bracketed
       placeholders in `lib/products.ts` (e.g. `[420 GSM cotton blend]`,
       `[Made in Canada]`, `[Imported]`).

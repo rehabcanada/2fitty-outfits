@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import CollectionCard from "@/components/CollectionCard";
 import TrustBar from "@/components/TrustBar";
 import SocialGallery from "@/components/SocialGallery";
 import Image from "next/image";
 import ProductGrid from "@/components/ProductGrid";
-import LookbookGrid from "@/components/LookbookGrid";
 import EmailSignup from "@/components/EmailSignup";
 import { getNewReleases, getProductBySlug } from "@/lib/products";
 
@@ -15,15 +13,6 @@ export const metadata: Metadata = {
   description:
     "Shop original hoodies, sweatpants, T-shirts, shorts and matching sets designed by 2Fitty Outfits.",
 };
-
-const CATEGORY_TILES = [
-  { title: "Hoodies", href: "/shop?category=Hoodies", seed: "cat-hoodies" },
-  { title: "Sweatpants", href: "/shop?category=Sweatpants", seed: "cat-sweatpants" },
-  { title: "T-Shirts", href: "/shop?category=T-Shirts", seed: "cat-tshirts" },
-  { title: "Shorts", href: "/shop?category=Shorts", seed: "cat-shorts" },
-  { title: "Matching Sets", href: "/shop?category=Matching%20Sets", seed: "cat-matching-sets" },
-  { title: "Accessories", href: "/shop?category=Accessories", seed: "cat-accessories" },
-];
 
 const STEPS = [
   {
@@ -38,12 +27,6 @@ const STEPS = [
     title: "Confirm Your Order",
     desc: "2Fitty Outfits contacts you directly to confirm availability, payment, and delivery.",
   },
-];
-
-const LOOKBOOK_PREVIEW = [
-  { seed: "lookbook-preview-1", caption: "Hoodie and matching sweatpants" },
-  { seed: "lookbook-preview-2", caption: "Oversized tee, styled loose" },
-  { seed: "lookbook-preview-3", caption: "Shorts set, warm-weather fit" },
 ];
 
 export default function Home() {
@@ -76,17 +59,6 @@ export default function Home() {
           comfortable shapes, versatile colours and recognizable 2Fitty
           details.
         </p>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="mb-8 text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
-          Shop by Category
-        </h2>
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-6">
-          {CATEGORY_TILES.map((c) => (
-            <CollectionCard key={c.title} title={c.title} href={c.href} imageSeed={c.seed} />
-          ))}
-        </div>
       </section>
 
       {matchingSet && (
@@ -154,18 +126,6 @@ export default function Home() {
       </section>
 
       <TrustBar />
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
-            Lookbook Preview
-          </h2>
-          <Link href="/lookbook" className="text-sm font-semibold text-brand-silver hover:text-white">
-            View Lookbook
-          </Link>
-        </div>
-        <LookbookGrid shots={LOOKBOOK_PREVIEW} />
-      </section>
 
       <EmailSignup />
 

@@ -13,6 +13,7 @@ export default function QuickViewModal({
   product: Product;
   onClose: () => void;
 }) {
+  const [activeImage, setActiveImage] = useState(0);
   const [size, setSize] = useState(product.sizes[0]);
   const [colour, setColour] = useState(product.colours[0]);
   const { addItem, openDrawer } = useOrderBag();
@@ -58,7 +59,45 @@ export default function QuickViewModal({
           </svg>
         </button>
         <div className="relative aspect-square w-full sm:w-1/2">
-          <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover" />
+          <Image src={product.images[activeImage]} alt={`${product.name}, view ${activeImage + 1}`} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover" />
+          {product.images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={() =>
+                  setActiveImage((i) => (i - 1 + product.images.length) % product.images.length)
+                }
+                aria-label="Previous image"
+                className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveImage((i) => (i + 1) % product.images.length)}
+                aria-label="Next image"
+                className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5">
+                {product.images.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setActiveImage(i)}
+                    aria-label={`View image ${i + 1}`}
+                    aria-current={activeImage === i}
+                    className={`h-1.5 w-1.5 rounded-full ${activeImage === i ? "bg-white" : "bg-white/40"}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
         <div className="flex w-full flex-col gap-3 p-6 sm:w-1/2">
           <p className="text-xs font-semibold uppercase tracking-wide text-brand-silver">{product.category}</p>

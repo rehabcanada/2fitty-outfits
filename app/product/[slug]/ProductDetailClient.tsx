@@ -45,6 +45,35 @@ export default function ProductDetailClient({
               className="object-cover"
               priority
             />
+            {product.images.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveImage((i) => (i - 1 + product.images.length) % product.images.length)
+                  }
+                  aria-label="Previous image"
+                  className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                    <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveImage((i) => (i + 1) % product.images.length)}
+                  aria-label="Next image"
+                  className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                    <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <span className="absolute bottom-2 right-2 rounded-full bg-black/60 px-2 py-0.5 text-[11px] font-semibold text-white">
+                  {activeImage + 1} / {product.images.length}
+                </span>
+              </>
+            )}
           </div>
           {product.images.length > 1 && (
             <div className="flex gap-2">
