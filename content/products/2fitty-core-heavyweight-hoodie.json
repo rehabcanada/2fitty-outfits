@@ -1,24 +1,33 @@
 {
-  "id": "p1",
-  "name": "2Fitty Core Heavyweight Hoodie",
-  "slug": "2fitty-core-heavyweight-hoodie",
-  "category": "Hoodies",
-  "price": 95,
-  "description": "The 2Fitty Core Heavyweight Hoodie is cut in a relaxed, slightly oversized fit with dropped shoulders and a structured hood. Finished with subtle embroidered 2F branding on the chest, a kangaroo pocket, and ribbed cuffs and hem for a clean, everyday shape.",
   "shortDescription": "Relaxed, slightly oversized heavyweight hoodie with subtle 2F branding.",
-  "colours": ["Black", "Grey", "White"],
-  "sizes": ["S", "M", "L", "XL"],
-  "fit": "Relaxed, slightly oversized fit with dropped shoulders.",
-  "materials": "[420 GSM cotton fleece blend], [80% cotton, 20% polyester]",
-  "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Do not iron on print/embroidery].",
-  "availability": "In Stock",
   "productStatus": "New Release",
-  "featured": true,
+  "colours": [
+    "Black",
+    "Grey",
+    "White"
+  ],
   "newRelease": true,
+  "price": 95,
+  "sizeGuideInfo": "Relaxed oversized fit. Select your regular size for the intended fit or size down for a closer fit.",
+  "name": "2Fitty Core Heavyweight Hoodie - Bone",
+  "slug": "2fitty-core-heavyweight-hoodie",
+  "materials": "[420 GSM cotton fleece blend], [80% cotton, 20% polyester]",
+  "featured": true,
+  "fit": "Relaxed, slightly oversized fit with dropped shoulders.",
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Do not iron on print/embroidery].",
   "images": [
     "/images/uploads/chatgpt-image-jul-21-2026-01_47_50-pm.png",
     "/images/uploads/chatgpt-image-jul-21-2026-01_42_09-pm.png",
     "/images/uploads/chatgpt-image-jul-21-2026-01_42_36-pm.png"
   ],
-  "sizeGuideInfo": "Relaxed oversized fit. Select your regular size for the intended fit or size down for a closer fit."
+  "id": "p1",
+  "availability": "In Stock",
+  "description": "The 2Fitty Core Heavyweight Hoodie is cut in a relaxed, slightly oversized fit with dropped shoulders and a structured hood. Finished with subtle embroidered 2F branding on the chest, a kangaroo pocket, and ribbed cuffs and hem for a clean, everyday shape.",
+  "category": "Hoodies"
 }
