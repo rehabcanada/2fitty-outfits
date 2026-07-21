@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
-import SocialGallery from "@/components/SocialGallery";
 import Image from "next/image";
 import ProductGrid from "@/components/ProductGrid";
 import EmailSignup from "@/components/EmailSignup";
@@ -118,7 +117,6 @@ export default function Home() {
 
       <EmailSignup />
 
-      <SocialGallery />
     </>
   );
 }
