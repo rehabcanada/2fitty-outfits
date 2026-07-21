@@ -183,6 +183,36 @@ app with no special Netlify-only features) -- just import the repo at
 vercel.com and set the same `NEXT_PUBLIC_FORMSPREE_ENDPOINT` environment
 variable in the Vercel project settings.
 
+## Admin Panel Setup
+
+This project includes a lightweight admin panel so you can edit products and view purchase requests without touching code. It has two parts:
+
+### 1. Editing products and images (Decap CMS)
+
+Visit `/admin` on your deployed site to log in and edit product fields or upload images through a simple form-based UI. Behind the scenes this is [Decap CMS](https://decapcms.org) (config at `public/admin/config.yml`), which commits your edits directly to `content/products.json` and `content/settings.json` in this GitHub repo. Netlify then automatically rebuilds and redeploys the site (usually within a minute or two).
+
+**One-time setup required in the Netlify dashboard (cannot be done from code):**
+1. Deploy this repo to Netlify via a Git-connected site (see "Deploying to Netlify" below) -- Decap CMS will not work with a manual drag-and-drop deploy, since it needs to commit to the connected Git repo.
+2. In the Netlify dashboard: **Site configuration → Identity → Enable Identity**.
+3. Still under Identity, go to **Services → Git Gateway → Enable Git Gateway**. This lets Netlify Identity authenticate CMS users against your Git repo without you managing GitHub accounts for every admin.
+4. Under **Identity → Invite users**, invite yourself (and anyone else who should be able to edit products) by email. You'll get an email to set a password.
+5. Visit `https://yoursite.netlify.app/admin`, log in with that email/password, and you'll see the products collection ready to edit.
+
+### 2. Viewing purchase requests (`/admin-requests`)
+
+The Order Request form submits through **Netlify Forms** (Netlify's built-in form capture -- no database needed). Every submission is automatically saved and viewable in the Netlify dashboard under **Forms**. In addition, this project has a simple in-site page at `/admin-requests` that lists submissions in a table, gated behind the same Netlify Identity login as `/admin`.
+
+**One-time setup required:**
+1. Complete the Identity setup above first (admin-requests uses the same login).
+2. Generate a Netlify **personal access token**: in the Netlify dashboard, go to your **User settings → Applications → Personal access tokens → New access token**. Copy it.
+3. Find your **Site ID**: in the Netlify dashboard, go to **Site configuration → General → Site details**, copy the "Site ID" value.
+4. In your Netlify site's **Environment variables**, add:
+   - `NETLIFY_API_TOKEN` = the personal access token from step 2
+   - `NETLIFY_SITE_ID` = the site ID from step 3
+5. Redeploy. Visit `/admin-requests`, log in with your Identity account, and you'll see submitted purchase requests without needing to check email.
+
+Both env vars are also documented in `.env.example`.
+
 ## Launch Checklist
 
 Before taking this live, make sure to:
