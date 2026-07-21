@@ -129,7 +129,7 @@ export default function OrderRequestForm() {
       // Primary path: Netlify Forms. This is a POST of URL-encoded form
       // data to "/" with a "form-name" field matching the hidden static
       // form Netlify's build-time bot detects (see
-      // components/HiddenNetlifyForms.tsx / app/layout.tsx). This is the
+      // public/__forms.html). This is the
       // standard documented workaround for using Netlify Forms with a
       // JS-rendered/React form instead of a native HTML POST. Submissions
       // show up in the Netlify dashboard (Forms tab) and are readable from
@@ -141,7 +141,7 @@ export default function OrderRequestForm() {
       // 404/400, which is expected and not a bug.
       let netlifyOk = false;
       try {
-        const res = await fetch("/", {
+        const res = await fetch("/__forms.html", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encodeFormData({

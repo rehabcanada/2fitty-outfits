@@ -1,0 +1,32 @@
+<!-- Static, hidden HTML file used ONLY so Netlify's build-time bot can
+     detect the shape of the "order-request" form. Netlify Forms scans
+     static HTML files present in the deploy output for <form data-netlify>
+     tags; it cannot see forms that only ever render/submit via client-side
+     JavaScript (like components/OrderRequestForm.tsx). This file is never
+     shown to users -- the real form POSTs here via fetch() with the same
+     form-name and field names, per Netlify's documented workaround for
+     Next.js: https://opennext.js.org/netlify/forms -->
+<html>
+  <head><meta charset="utf-8" /><title>Form detection</title></head>
+  <body>
+    <form name="order-request" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="order-request" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="preferredContact" />
+      <input type="text" name="city" />
+      <input type="text" name="region" />
+      <input type="text" name="product" />
+      <input type="text" name="colour" />
+      <input type="text" name="size" />
+      <input type="number" name="quantity" />
+      <input type="text" name="fulfillment" />
+      <input type="text" name="instagram" />
+      <textarea name="notes"></textarea>
+      <input type="text" name="understandRequest" />
+      <input type="text" name="agreeContact" />
+    </form>
+  </body>
+</html>

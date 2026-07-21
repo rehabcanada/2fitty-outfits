@@ -6,7 +6,6 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OrderBagDrawer from "@/components/OrderBagDrawer";
-import HiddenNetlifyForms from "@/components/HiddenNetlifyForms";
 
 // Brand suite typography: bold/condensed heading font + clean sans body
 // copy. This intentionally does NOT use next/font/google (which fetches
@@ -71,14 +70,13 @@ export default function RootLayout({
           `}
         </Script>
         {/*
-          Hidden static form used purely so Netlify's build-time HTML scan
-          can detect the "order-request" form's field shape (Netlify Forms
-          requires a plain <form data-netlify> somewhere in the built static
-          HTML -- it can't detect forms submitted only via client-side JS).
-          The real, visible form (components/OrderRequestForm.tsx) submits
-          to this same form name via fetch(). See that file for details.
+          Netlify Forms detection: the "order-request" form's shape is
+          declared in the real static file public/__forms.html (not
+          rendered via React), per Netlify's documented workaround for
+          Next.js apps: https://opennext.js.org/netlify/forms. The real,
+          visible form (components/OrderRequestForm.tsx) submits to that
+          same file via fetch(). See that file for details.
         */}
-        <HiddenNetlifyForms />
         <OrderBagProvider>
           <AnnouncementBar />
           <Header />

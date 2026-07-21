@@ -54,7 +54,7 @@ export const handler = async () => {
         statusCode: 200,
         body: JSON.stringify({
           submissions: [],
-          note: "No 'order-request' form found yet -- it appears in the Netlify dashboard's Forms tab only after the first real submission or after a deploy that includes the hidden detection form (components/HiddenNetlifyForms.tsx).",
+          note: "No 'order-request' form found yet -- it appears in the Netlify dashboard's Forms tab only after the first real submission or after a deploy that includes the hidden detection form (public/__forms.html).",
         }),
       };
     }
