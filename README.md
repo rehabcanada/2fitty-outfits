@@ -100,37 +100,56 @@ The component is used in both `components/Header.tsx` and
 
 ## Adding / Editing Products
 
-All product data lives in `lib/products.ts` as a plain array of objects
-matching the `Product` type in `lib/types.ts`:
+Product data lives as one JSON file per product in `content/products/`, named
+by slug (e.g. `content/products/2fitty-core-heavyweight-hoodie.json`). Each
+file is a single product object matching the `Product` type in
+`lib/types.ts`, at the top level of the file (not nested under a wrapper
+key):
 
-```ts
+```json
 {
-  id: "p11",
-  name: "New Product Name",
-  slug: "new-product-name",       // used for /product/[slug] and must be unique
-  category: "Hoodies",            // one of: New Releases, Hoodies, Sweatshirts, Sweatpants, T-Shirts, Shorts, Matching Sets, Outerwear, Accessories
-  price: 85,                      // CAD, plain number -- shown as "$85 CAD"
-  description: "Full product description.",
-  shortDescription: "Short one-line description.",
-  colours: ["Black", "Grey"],
-  sizes: ["S", "M", "L"],
-  fit: "Relaxed fit.",
-  materials: "[420 GSM cotton blend]",       // bracketed placeholders until confirmed
-  careInstructions: "[Machine wash cold].",  // bracketed placeholders until confirmed
-  availability: "In Stock",       // In Stock | Limited | Sold Out | Restocking | Pre-Order
-  productStatus: "New Release",   // New Release | Limited | Coming Soon | Sold Out | Restocking | None
-  featured: false,
-  newRelease: true,
-  images: ["https://picsum.photos/seed/new-product-name/800/1000"],
-  sizeGuideInfo: "Relaxed fit. Select your regular size...",
+  "id": "p11",
+  "name": "New Product Name",
+  "slug": "new-product-name",
+  "category": "Hoodies",
+  "price": 85,
+  "description": "Full product description.",
+  "shortDescription": "Short one-line description.",
+  "colours": ["Black", "Grey"],
+  "sizes": ["S", "M", "L"],
+  "fit": "Relaxed fit.",
+  "materials": "[420 GSM cotton blend]",
+  "careInstructions": "[Machine wash cold].",
+  "availability": "In Stock",
+  "productStatus": "New Release",
+  "featured": false,
+  "newRelease": true,
+  "images": ["/images/uploads/example.png"],
+  "sizeGuideInfo": "Relaxed fit. Select your regular size..."
 }
 ```
 
-Add a new object to the `products` array to add a product, edit an existing
-object to update it, or remove an object to delete it. The shop page,
-homepage New Releases grid, product detail pages, and related-products logic
-all read from this same array automatically -- no other files need to
-change.
+- **Add a product:** create a new `.json` file in `content/products/` named
+  after its slug (e.g. `content/products/new-product-name.json`).
+- **Edit a product:** edit its existing file in place.
+- **Remove a product:** delete its file.
+
+`lib/products.ts` reads every `.json` file in `content/products/` at build
+time and assembles them into the catalogue array, sorted by `id`. The shop
+page, homepage New Releases grid, product detail pages, and related-products
+logic all read from that same derived array automatically -- no other files
+need to change.
+
+This one-file-per-product layout is a Decap CMS "folder collection" -- the
+standard, well-tested pattern for managing a list of many similar items.
+It replaces an earlier setup where all products were nested inside a single
+`content/products.json` file as one big list, which occasionally caused
+edits made through `/admin` to silently truncate the product list. Because
+each product is now its own file, an edit to one product can no longer
+affect or drop any other product. `/admin` also now has a **"New Product"**
+button that creates one of these files for you (this button didn't reliably
+work under the old nested-list structure), making adding products through
+the admin UI both possible and safe.
 
 
 ## Replacing Product Images
@@ -198,7 +217,7 @@ This project includes a lightweight admin panel so you can edit products and vie
 
 ### 1. Editing products and images (Decap CMS)
 
-Visit `/admin` on your deployed site to log in and edit product fields or upload images through a simple form-based UI. Behind the scenes this is [Decap CMS](https://decapcms.org) (config at `public/admin/config.yml`), which commits your edits directly to `content/products.json` and `content/settings.json` in this GitHub repo. Netlify then automatically rebuilds and redeploys the site (usually within a minute or two).
+Visit `/admin` on your deployed site to log in and edit product fields or upload images through a simple form-based UI. Behind the scenes this is [Decap CMS](https://decapcms.org) (config at `public/admin/config.yml`), which commits your edits directly to per-product files in `content/products/` and to `content/settings.json` in this GitHub repo. Netlify then automatically rebuilds and redeploys the site (usually within a minute or two).
 
 **One-time setup required in the Netlify dashboard (cannot be done from code):**
 1. Deploy this repo to Netlify via a Git-connected site (see "Deploying to Netlify" below) -- Decap CMS will not work with a manual drag-and-drop deploy, since it needs to commit to the connected Git repo.

@@ -21,55 +21,53 @@ display_url: https://2fittyoutfits.example.com
 logo_url: /favicon.ico
 
 collections:
-  # Single JSON file collection: every product lives in one file
-  # (content/products.json) as a list, which keeps this simple to wire up.
-  # Fields below mirror the Product interface in lib/types.ts exactly --
-  # if that interface changes, update this file to match.
+  # Folder collection: each product is its own JSON file in
+  # content/products/, named by slug. This is the standard, well-tested
+  # Decap CMS pattern for a list of many similar items (recommended over
+  # nesting a "list" widget of full objects inside a single file
+  # collection, which previously caused edits through /admin to silently
+  # truncate the product list). Fields below mirror the Product interface
+  # in lib/types.ts exactly -- if that interface changes, update this file
+  # to match.
   - name: "products"
     label: "Products"
-    files:
-      - name: "products"
-        label: "Products"
-        file: "content/products.json"
-        fields:
-          - label: "Products"
-            name: "products"
-            widget: "list"
-            label_singular: "Product"
-            identifier_field: "name"
-            fields:
-              - { label: "ID", name: "id", widget: "string", hint: "Stable internal id, e.g. p11. Do not change on existing products." }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Slug", name: "slug", widget: "string", hint: "URL-safe, e.g. core-heavyweight-hoodie" }
-              - label: "Category"
-                name: "category"
-                widget: "select"
-                options: ["New Releases", "Hoodies", "Sweatshirts", "Sweatpants", "T-Shirts", "Shorts", "Matching Sets", "Outerwear", "Accessories"]
-              - { label: "Price (CAD, number only)", name: "price", widget: "number", value_type: "float" }
-              - { label: "Short Description", name: "shortDescription", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Colours", name: "colours", widget: "list" }
-              - { label: "Sizes", name: "sizes", widget: "list" }
-              - { label: "Fit", name: "fit", widget: "string" }
-              - { label: "Materials", name: "materials", widget: "string", hint: "Use [bracketed placeholders] for unconfirmed specs." }
-              - { label: "Care Instructions", name: "careInstructions", widget: "string" }
-              - label: "Availability"
-                name: "availability"
-                widget: "select"
-                options: ["In Stock", "Limited", "Sold Out", "Restocking", "Pre-Order"]
-              - label: "Product Status Badge"
-                name: "productStatus"
-                widget: "select"
-                options: ["New Release", "Limited", "Coming Soon", "Sold Out", "Restocking", "None"]
-              - { label: "Featured", name: "featured", widget: "boolean", default: false }
-              - { label: "New Release", name: "newRelease", widget: "boolean", default: false }
-              - label: "Images"
-                name: "images"
-                widget: "list"
-                hint: "Upload in this order for best results: 1) Product photo alone (flat lay or ghost mannequin), 2) Model wearing it - front, 3) Model wearing it - back. You can add more or fewer if needed."
-                field: { label: "Image", name: "image", widget: "image" }
-              - { label: "Size Guide Info", name: "sizeGuideInfo", widget: "string" }
-              - { label: "Instagram Post URL (optional)", name: "instagramPostUrl", widget: "string", required: false }
+    folder: "content/products"
+    create: true
+    slug: "{{fields.slug}}"
+    identifier_field: "name"
+    fields:
+      - { label: "ID", name: "id", widget: "string", hint: "Stable internal id, e.g. p11. Do not change on existing products." }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL-safe, e.g. core-heavyweight-hoodie. Must be unique. This also determines the filename." }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["New Releases", "Hoodies", "Sweatshirts", "Sweatpants", "T-Shirts", "Shorts", "Matching Sets", "Outerwear", "Accessories"]
+      - { label: "Price (CAD, number only)", name: "price", widget: "number", value_type: "float" }
+      - { label: "Short Description", name: "shortDescription", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Colours", name: "colours", widget: "list" }
+      - { label: "Sizes", name: "sizes", widget: "list" }
+      - { label: "Fit", name: "fit", widget: "string" }
+      - { label: "Materials", name: "materials", widget: "string", hint: "Use [bracketed placeholders] for unconfirmed specs." }
+      - { label: "Care Instructions", name: "careInstructions", widget: "string" }
+      - label: "Availability"
+        name: "availability"
+        widget: "select"
+        options: ["In Stock", "Limited", "Sold Out", "Restocking", "Pre-Order"]
+      - label: "Product Status Badge"
+        name: "productStatus"
+        widget: "select"
+        options: ["New Release", "Limited", "Coming Soon", "Sold Out", "Restocking", "None"]
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "New Release", name: "newRelease", widget: "boolean", default: false }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        hint: "Upload in this order for best results: 1) Product photo alone (flat lay or ghost mannequin), 2) Model wearing it - front, 3) Model wearing it - back. You can add more or fewer if needed."
+        field: { label: "Image", name: "image", widget: "image" }
+      - { label: "Size Guide Info", name: "sizeGuideInfo", widget: "string" }
+      - { label: "Instagram Post URL (optional)", name: "instagramPostUrl", widget: "string", required: false }
 
   # Nice-to-have: lets the owner edit a few site-wide bits of copy (the
   # announcement bar, hero headline/subtext) without a code deploy. Kept
