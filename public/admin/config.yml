@@ -27,51 +27,52 @@ collections:
   # if that interface changes, update this file to match.
   - name: "products"
     label: "Products"
-    file: "content/products.json"
-    format: "json"
-    identifier_field: "name"
-    fields:
-      - label: "Products"
-        name: "products"
-        widget: "list"
-        label_singular: "Product"
-        identifier_field: "name"
+    files:
+      - name: "products"
+        label: "Products"
+        file: "content/products.json"
         fields:
-          - { label: "ID", name: "id", widget: "string", hint: "Stable internal id, e.g. p11. Do not change on existing products." }
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Slug", name: "slug", widget: "string", hint: "URL-safe, e.g. core-heavyweight-hoodie" }
-          - label: "Collection"
-            name: "collection"
-            widget: "select"
-            options: ["2Fitty Core", "Fifty Series", "After Hours", "Signature Sets"]
-          - label: "Category"
-            name: "category"
-            widget: "select"
-            options: ["New Releases", "Hoodies", "Sweatshirts", "Sweatpants", "T-Shirts", "Shorts", "Matching Sets", "Outerwear", "Accessories"]
-          - { label: "Price (CAD, number only)", name: "price", widget: "number", value_type: "float" }
-          - { label: "Short Description", name: "shortDescription", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Colours", name: "colours", widget: "list" }
-          - { label: "Sizes", name: "sizes", widget: "list" }
-          - { label: "Fit", name: "fit", widget: "string" }
-          - { label: "Materials", name: "materials", widget: "string", hint: "Use [bracketed placeholders] for unconfirmed specs." }
-          - { label: "Care Instructions", name: "careInstructions", widget: "string" }
-          - label: "Availability"
-            name: "availability"
-            widget: "select"
-            options: ["In Stock", "Limited", "Sold Out", "Restocking", "Pre-Order"]
-          - label: "Product Status Badge"
-            name: "productStatus"
-            widget: "select"
-            options: ["New Release", "Limited", "Coming Soon", "Sold Out", "Restocking", "None"]
-          - { label: "Featured", name: "featured", widget: "boolean", default: false }
-          - { label: "New Release", name: "newRelease", widget: "boolean", default: false }
-          - label: "Images"
-            name: "images"
+          - label: "Products"
+            name: "products"
             widget: "list"
-            field: { label: "Image", name: "image", widget: "image" }
-          - { label: "Size Guide Info", name: "sizeGuideInfo", widget: "string" }
-          - { label: "Instagram Post URL (optional)", name: "instagramPostUrl", widget: "string", required: false }
+            label_singular: "Product"
+            identifier_field: "name"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Stable internal id, e.g. p11. Do not change on existing products." }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string", hint: "URL-safe, e.g. core-heavyweight-hoodie" }
+              - label: "Collection"
+                name: "collection"
+                widget: "select"
+                options: ["2Fitty Core", "Fifty Series", "After Hours", "Signature Sets"]
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["New Releases", "Hoodies", "Sweatshirts", "Sweatpants", "T-Shirts", "Shorts", "Matching Sets", "Outerwear", "Accessories"]
+              - { label: "Price (CAD, number only)", name: "price", widget: "number", value_type: "float" }
+              - { label: "Short Description", name: "shortDescription", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Colours", name: "colours", widget: "list" }
+              - { label: "Sizes", name: "sizes", widget: "list" }
+              - { label: "Fit", name: "fit", widget: "string" }
+              - { label: "Materials", name: "materials", widget: "string", hint: "Use [bracketed placeholders] for unconfirmed specs." }
+              - { label: "Care Instructions", name: "careInstructions", widget: "string" }
+              - label: "Availability"
+                name: "availability"
+                widget: "select"
+                options: ["In Stock", "Limited", "Sold Out", "Restocking", "Pre-Order"]
+              - label: "Product Status Badge"
+                name: "productStatus"
+                widget: "select"
+                options: ["New Release", "Limited", "Coming Soon", "Sold Out", "Restocking", "None"]
+              - { label: "Featured", name: "featured", widget: "boolean", default: false }
+              - { label: "New Release", name: "newRelease", widget: "boolean", default: false }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image" }
+              - { label: "Size Guide Info", name: "sizeGuideInfo", widget: "string" }
+              - { label: "Instagram Post URL (optional)", name: "instagramPostUrl", widget: "string", required: false }
 
   # Nice-to-have: lets the owner edit a few site-wide bits of copy (the
   # announcement bar, hero headline/subtext) without a code deploy. Kept

@@ -21,7 +21,7 @@ import productsData from "@/content/products.json";
 // Images are placeholders (picsum.photos seeded by slug) -- swap with real
 // product photography before launch (or upload new images through /admin,
 // which stores uploads in public/images/uploads). See README for instructions.
-export const products: Product[] = productsData as Product[];
+export const products: Product[] = (productsData as { products: Product[] }).products;
 
 export const COLLECTIONS: { name: CollectionName; description: string; imageSeed: string }[] = [
   {
