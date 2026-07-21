@@ -3,18 +3,27 @@
   "name": "2Fitty Core Relaxed Sweatpants",
   "slug": "2fitty-core-relaxed-sweatpants",
   "category": "Sweatpants",
-  "price": 95,
+  "price": 70,
   "description": "The 2Fitty Core Relaxed Sweatpants feature a relaxed-through-the-thigh, tapered-at-the-ankle silhouette in soft brushed fleece. An elastic drawstring waistband and ribbed ankle cuffs keep the fit clean, with a small embroidered 2F mark at the hip. Designed to be worn alone or matched with the Core Heavyweight Hoodie as a set.",
   "shortDescription": "Relaxed-taper fleece sweatpants that pair with the Core Heavyweight Hoodie.",
-  "colours": ["Black", "Grey", "White"],
-  "sizes": ["S", "M", "L", "XL"],
+  "colours": [
+    "Black",
+    "Grey",
+    "White"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
   "fit": "Relaxed through the thigh, tapered at the ankle.",
   "materials": "[420 GSM cotton fleece blend], [80% cotton, 20% polyester]",
   "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low].",
   "availability": "In Stock",
   "productStatus": "New Release",
   "featured": true,
-  "newRelease": false,
+  "newRelease": true,
   "images": [
     "/images/uploads/chatgpt-image-jul-21-2026-02_17_33-pm.png",
     "/images/uploads/chatgpt-image-jul-21-2026-02_30_18-pm.png",

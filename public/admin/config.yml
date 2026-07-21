@@ -35,6 +35,8 @@ collections:
     create: true
     slug: "{{fields.slug}}"
     identifier_field: "name"
+    extension: "json"
+    format: "json"
     fields:
       - { label: "ID", name: "id", widget: "string", hint: "Stable internal id, e.g. p11. Do not change on existing products." }
       - { label: "Name", name: "name", widget: "string" }
