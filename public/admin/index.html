@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  Decap CMS (formerly Netlify CMS) bootstrap page.
+
+  This gives the site owner a simple in-browser UI at /admin for editing
+  product data (content/products.json) and uploading product images
+  (public/images/uploads) without touching code. Decap commits changes
+  straight to the connected git repo; Netlify then rebuilds the site.
+
+  Requires (dashboard-only steps, cannot be done from code -- see README):
+    1. The site must be deployed via a GitHub repo connected to Netlify
+       (git-based deploy), not a manual drag-and-drop zip.
+    2. Site settings -> Identity -> Enable Identity.
+    3. Site settings -> Identity -> Services -> Git Gateway -> Enable.
+    4. Invite the owner's email as a user under Identity so they can log in
+       here at /admin.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager | 2Fitty Outfits</title>
+    <!-- Netlify Identity widget: handles login/auth for Decap via Git Gateway. -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // Redirect Identity's default confirmation/invite links (which land on
+      // "/" with a "#invite_token=..." or "#recovery_token=..." fragment)
+      // back into this admin page so the login modal can pick the token up.
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Obsidian Black / Bone White -- official 2Fitty Outfits brand suite */
+  --background: #0b0b0b;
+  --foreground: #f4f1ea;
+
+  /* Brand suite typography fallback stacks. These intentionally use only
+     locally-available/system fonts (no next/font/google, no external font
+     fetch at build or runtime) -- a bold-900 condensed fallback stack for
+     headings, and a clean system sans stack for body copy, per the brand
+     suite's documented alternative to Anton/Archivo Black + Inter. */
+  --font-heading: "Arial Narrow", "Archivo Black", Impact, "Helvetica Neue", Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Bold, tall/condensed heading font across the site per the brand suite --
+   applies globally so individual components don't need per-element classes. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+/* Consistent focus-visible styling across the site for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@layer utilities {
+  .text-gradient-silver {
+    background: linear-gradient(180deg, #ffffff 0%, #c6ccd2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

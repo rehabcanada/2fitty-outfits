@@ -1,0 +1,84 @@
+# Decap CMS configuration for 2Fitty Outfits.
+#
+# backend.name "git-gateway" means auth + git access is handled by Netlify
+# Identity + Git Gateway -- no custom OAuth app or backend server needed.
+# This ONLY works once the owner has enabled Identity and Git Gateway for
+# this site in the Netlify dashboard (Site settings -> Identity -> Enable;
+# then Services -> Git Gateway -> Enable) and the site is deployed from a
+# connected git repo (see README "Admin Panel Setup").
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded media (product photos, etc.) is stored in the repo, and
+# the public URL path Next.js/the browser will use to reference them.
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Shown at the top of the CMS UI.
+site_url: https://2fittyoutfits.example.com
+display_url: https://2fittyoutfits.example.com
+logo_url: /favicon.ico
+
+collections:
+  # Single JSON file collection: every product lives in one file
+  # (content/products.json) as a list, which keeps this simple to wire up.
+  # Fields below mirror the Product interface in lib/types.ts exactly --
+  # if that interface changes, update this file to match.
+  - name: "products"
+    label: "Products"
+    file: "content/products.json"
+    format: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Products", name: "products", widget: "list", label_singular: "Product", identifier_field: "name", fields:
+          - { label: "ID", name: "id", widget: "string", hint: "Stable internal id, e.g. p11. Do not change on existing products." }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string", hint: "URL-safe, e.g. core-heavyweight-hoodie" }
+          - label: "Collection"
+            name: "collection"
+            widget: "select"
+            options: ["2Fitty Core", "Fifty Series", "After Hours", "Signature Sets"]
+          - label: "Category"
+            name: "category"
+            widget: "select"
+            options: ["New Releases", "Hoodies", "Sweatshirts", "Sweatpants", "T-Shirts", "Shorts", "Matching Sets", "Outerwear", "Accessories"]
+          - { label: "Price (CAD, number only)", name: "price", widget: "number", value_type: "float" }
+          - { label: "Short Description", name: "shortDescription", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Colours", name: "colours", widget: "list" }
+          - { label: "Sizes", name: "sizes", widget: "list" }
+          - { label: "Fit", name: "fit", widget: "string" }
+          - { label: "Materials", name: "materials", widget: "string", hint: "Use [bracketed placeholders] for unconfirmed specs." }
+          - { label: "Care Instructions", name: "careInstructions", widget: "string" }
+          - label: "Availability"
+            name: "availability"
+            widget: "select"
+            options: ["In Stock", "Limited", "Sold Out", "Restocking", "Pre-Order"]
+          - label: "Product Status Badge"
+            name: "productStatus"
+            widget: "select"
+            options: ["New Release", "Limited", "Coming Soon", "Sold Out", "Restocking", "None"]
+          - { label: "Featured", name: "featured", widget: "boolean", default: false }
+          - { label: "New Release", name: "newRelease", widget: "boolean", default: false }
+          - { label: "Images", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
+          - { label: "Size Guide Info", name: "sizeGuideInfo", widget: "string" }
+          - { label: "Instagram Post URL (optional)", name: "instagramPostUrl", widget: "string", required: false }
+        ]
+
+  # Nice-to-have: lets the owner edit a few site-wide bits of copy (the
+  # announcement bar, hero headline/subtext) without a code deploy. Kept
+  # intentionally small so it doesn't block the build -- app/page.tsx and
+  # components/AnnouncementBar.tsx are NOT yet wired to read this file
+  # (still using the hardcoded brand copy documented in the brand pivot);
+  # wiring them up is a follow-up, not required for the admin panel to work.
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "content/settings.json"
+        label: "General Settings"
+        name: "general"
+        fields:
+          - { label: "Announcement Bar Text", name: "announcement", widget: "string" }
+          - { label: "Hero Headline", name: "heroHeadline", widget: "string" }
+          - { label: "Hero Subtext", name: "heroSubtext", widget: "text" }

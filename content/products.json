@@ -1,0 +1,326 @@
+[
+  {
+    "id": "p1",
+    "name": "2Fitty Core Heavyweight Hoodie",
+    "slug": "2fitty-core-heavyweight-hoodie",
+    "collection": "2Fitty Core",
+    "category": "Hoodies",
+    "price": 85,
+    "shortDescription": "Relaxed, slightly oversized heavyweight hoodie with subtle 2F branding.",
+    "description": "The 2Fitty Core Heavyweight Hoodie is cut in a relaxed, slightly oversized fit with dropped shoulders and a structured hood. Finished with subtle embroidered 2F branding on the chest, a kangaroo pocket, and ribbed cuffs and hem for a clean, everyday shape.",
+    "colours": [
+      "Black",
+      "Grey",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Relaxed, slightly oversized fit with dropped shoulders.",
+    "materials": "[420 GSM cotton fleece blend], [80% cotton, 20% polyester]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Do not iron on print/embroidery].",
+    "availability": "In Stock",
+    "productStatus": "New Release",
+    "featured": true,
+    "newRelease": true,
+    "images": [
+      "https://picsum.photos/seed/2fitty-core-heavyweight-hoodie/800/1000",
+      "https://picsum.photos/seed/2fitty-core-heavyweight-hoodie-2/800/1000"
+    ],
+    "sizeGuideInfo": "Relaxed oversized fit. Select your regular size for the intended fit or size down for a closer fit."
+  },
+  {
+    "id": "p2",
+    "name": "2Fitty Core Relaxed Sweatpants",
+    "slug": "2fitty-core-relaxed-sweatpants",
+    "collection": "2Fitty Core",
+    "category": "Sweatpants",
+    "price": 70,
+    "shortDescription": "Relaxed-taper fleece sweatpants that pair with the Core Heavyweight Hoodie.",
+    "description": "The 2Fitty Core Relaxed Sweatpants feature a relaxed-through-the-thigh, tapered-at-the-ankle silhouette in soft brushed fleece. An elastic drawstring waistband and ribbed ankle cuffs keep the fit clean, with a small embroidered 2F mark at the hip. Designed to be worn alone or matched with the Core Heavyweight Hoodie as a set.",
+    "colours": [
+      "Black",
+      "Grey",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Relaxed through the thigh, tapered at the ankle.",
+    "materials": "[420 GSM cotton fleece blend], [80% cotton, 20% polyester]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low].",
+    "availability": "In Stock",
+    "productStatus": "New Release",
+    "featured": true,
+    "newRelease": false,
+    "images": [
+      "https://picsum.photos/seed/2fitty-core-relaxed-sweatpants/800/1000",
+      "https://picsum.photos/seed/2fitty-core-relaxed-sweatpants-2/800/1000"
+    ],
+    "sizeGuideInfo": "Relaxed, tapered fit. Select your regular size for the intended fit or size down for a closer fit."
+  },
+  {
+    "id": "p3",
+    "name": "Fifty Graphic Hoodie",
+    "slug": "fifty-graphic-hoodie",
+    "collection": "Fifty Series",
+    "category": "Hoodies",
+    "price": 95,
+    "shortDescription": "Oversized hoodie with a large front graphic and statement branding.",
+    "description": "The Fifty Graphic Hoodie is built in an oversized fit with dropped shoulders, finished with a large printed graphic across the chest and a bold embroidered '50' at the back yoke. Heavyweight fleece construction with a double-lined hood and front pocket for everyday wear.",
+    "colours": [
+      "Black",
+      "Charcoal",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Oversized fit with dropped shoulders.",
+    "materials": "[420 GSM cotton fleece blend], [Imported]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Do not iron on graphic].",
+    "availability": "In Stock",
+    "productStatus": "New Release",
+    "featured": true,
+    "newRelease": true,
+    "images": [
+      "https://picsum.photos/seed/fifty-graphic-hoodie/800/1000",
+      "https://picsum.photos/seed/fifty-graphic-hoodie-2/800/1000"
+    ],
+    "sizeGuideInfo": "Oversized fit. Select your regular size for the intended fit or size down for a closer fit.",
+    "instagramPostUrl": "https://www.instagram.com/2fittyoutfits/"
+  },
+  {
+    "id": "p4",
+    "name": "Fifty Oversized T-Shirt",
+    "slug": "fifty-oversized-tshirt",
+    "collection": "Fifty Series",
+    "category": "T-Shirts",
+    "price": 45,
+    "shortDescription": "Boxy, oversized tee with a large back-print graphic.",
+    "description": "The Fifty Oversized T-Shirt is cut boxy and oversized in heavyweight cotton, with a large printed graphic across the back and a smaller '50' mark on the chest. Dropped shoulders and a straight hem keep it easy to layer or wear on its own.",
+    "colours": [
+      "Black",
+      "White",
+      "Grey"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Boxy, oversized fit with dropped shoulders.",
+    "materials": "[220 GSM cotton], [100% cotton], [Pre-shrunk]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Do not iron on print].",
+    "availability": "In Stock",
+    "productStatus": "New Release",
+    "featured": false,
+    "newRelease": true,
+    "images": [
+      "https://picsum.photos/seed/fifty-oversized-tshirt/800/1000",
+      "https://picsum.photos/seed/fifty-oversized-tshirt-2/800/1000"
+    ],
+    "sizeGuideInfo": "Boxy oversized fit. Select your regular size for the intended fit or size down for a closer fit."
+  },
+  {
+    "id": "p5",
+    "name": "After Hours Washed Hoodie",
+    "slug": "after-hours-washed-hoodie",
+    "collection": "After Hours",
+    "category": "Hoodies",
+    "price": 90,
+    "shortDescription": "Garment-washed hoodie in a muted, darker colourway.",
+    "description": "The After Hours Washed Hoodie is garment-dyed and washed for a softer, muted charcoal finish. Cut in a relaxed fit with a structured hood, dropped shoulders, and a tonal embroidered 2F mark at the chest for understated, darker-toned branding.",
+    "colours": [
+      "Washed Black",
+      "Washed Charcoal"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Relaxed fit with dropped shoulders.",
+    "materials": "[400 GSM cotton fleece blend], [Garment-dyed]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Wash separately for first wash].",
+    "availability": "Limited",
+    "productStatus": "Limited",
+    "featured": true,
+    "newRelease": true,
+    "images": [
+      "https://picsum.photos/seed/after-hours-washed-hoodie/800/1000",
+      "https://picsum.photos/seed/after-hours-washed-hoodie-2/800/1000"
+    ],
+    "sizeGuideInfo": "Relaxed fit. Select your regular size for the intended fit or size down for a closer fit."
+  },
+  {
+    "id": "p6",
+    "name": "After Hours Wide-Leg Sweatpants",
+    "slug": "after-hours-wide-leg-sweatpants",
+    "collection": "After Hours",
+    "category": "Sweatpants",
+    "price": 75,
+    "shortDescription": "Wide-leg fleece sweatpants in a muted, darker colourway.",
+    "description": "The After Hours Wide-Leg Sweatpants feature a straight, wide-leg cut in garment-washed fleece with an elastic drawstring waistband and side pockets. A tonal embroidered 2F mark sits at the hip for subtle, darker-toned branding.",
+    "colours": [
+      "Washed Black",
+      "Washed Charcoal"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Wide-leg, relaxed fit through the leg.",
+    "materials": "[400 GSM cotton fleece blend], [Garment-dyed]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Wash separately for first wash].",
+    "availability": "Limited",
+    "productStatus": "Limited",
+    "featured": false,
+    "newRelease": true,
+    "images": [
+      "https://picsum.photos/seed/after-hours-wide-leg-sweatpants/800/1000",
+      "https://picsum.photos/seed/after-hours-wide-leg-sweatpants-2/800/1000"
+    ],
+    "sizeGuideInfo": "Wide-leg relaxed fit. Select your regular size for the intended fit or size down for a closer fit."
+  },
+  {
+    "id": "p7",
+    "name": "2Fitty Core Fleece Shorts",
+    "slug": "2fitty-core-fleece-shorts",
+    "collection": "2Fitty Core",
+    "category": "Shorts",
+    "price": 55,
+    "shortDescription": "Relaxed above-the-knee fleece shorts with a small 2F mark.",
+    "description": "The 2Fitty Core Fleece Shorts are cut in a relaxed, above-the-knee length in soft brushed fleece, with an elastic drawstring waistband and side pockets. A small embroidered 2F mark sits at the hip for clean, minimal branding.",
+    "colours": [
+      "Black",
+      "Grey",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Relaxed fit, above-the-knee length.",
+    "materials": "[380 GSM cotton fleece blend], [80% cotton, 20% polyester]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low].",
+    "availability": "In Stock",
+    "productStatus": "None",
+    "featured": false,
+    "newRelease": true,
+    "images": [
+      "https://picsum.photos/seed/2fitty-core-fleece-shorts/800/1000",
+      "https://picsum.photos/seed/2fitty-core-fleece-shorts-2/800/1000"
+    ],
+    "sizeGuideInfo": "Relaxed fit. Select your regular size for the intended fit or size down for a closer fit."
+  },
+  {
+    "id": "p8",
+    "name": "Signature Hoodie and Sweatpants Set",
+    "slug": "signature-hoodie-and-sweatpants-set",
+    "collection": "Signature Sets",
+    "category": "Matching Sets",
+    "price": 145,
+    "shortDescription": "Matching heavyweight hoodie and sweatpants set, sold as one coordinated outfit.",
+    "description": "The Signature Hoodie and Sweatpants Set pairs the 2Fitty Core Heavyweight Hoodie with the 2Fitty Core Relaxed Sweatpants in a matching colourway, so both pieces are cut from the same heavyweight fleece with matching embroidered 2F branding. Purchase as a complete set, or request the hoodie or sweatpants separately through the order form notes.",
+    "colours": [
+      "Black",
+      "Grey"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "Relaxed, slightly oversized fit (both pieces).",
+    "materials": "[420 GSM cotton fleece blend], [80% cotton, 20% polyester]",
+    "careInstructions": "[Machine wash cold, inside out]. [Tumble dry low]. [Wash separately for first wash].",
+    "availability": "In Stock",
+    "productStatus": "New Release",
+    "featured": true,
+    "newRelease": true,
+    "images": [
+      "https://picsum.photos/seed/signature-hoodie-and-sweatpants-set/800/1000",
+      "https://picsum.photos/seed/signature-hoodie-and-sweatpants-set-2/800/1000"
+    ],
+    "sizeGuideInfo": "Relaxed oversized fit. Select your regular size for the intended fit or size down for a closer fit."
+  },
+  {
+    "id": "p9",
+    "name": "2F Embroidered Cap",
+    "slug": "2f-embroidered-cap",
+    "collection": "2Fitty Core",
+    "category": "Accessories",
+    "price": 35,
+    "shortDescription": "Structured 6-panel cap with embroidered 2F branding.",
+    "description": "The 2F Embroidered Cap is a structured 6-panel cap with a curved brim, embroidered 2F branding on the front panel, and an adjustable strap back for a comfortable, one-size-fits-most fit. A simple way to finish off any 2Fitty outfit.",
+    "colours": [
+      "Black",
+      "Grey",
+      "White"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "fit": "Structured fit, adjustable strap back.",
+    "materials": "[100% cotton twill], [Imported]",
+    "careInstructions": "[Spot clean only]. [Do not machine wash].",
+    "availability": "In Stock",
+    "productStatus": "None",
+    "featured": false,
+    "newRelease": false,
+    "images": [
+      "https://picsum.photos/seed/2f-embroidered-cap/800/1000",
+      "https://picsum.photos/seed/2f-embroidered-cap-2/800/1000"
+    ],
+    "sizeGuideInfo": "One size, adjustable strap back."
+  },
+  {
+    "id": "p10",
+    "name": "Fifty Varsity Jacket",
+    "slug": "fifty-varsity-jacket",
+    "collection": "Fifty Series",
+    "category": "Outerwear",
+    "price": 135,
+    "shortDescription": "Varsity-style jacket with embroidered Fifty branding.",
+    "description": "The Fifty Varsity Jacket takes a classic varsity silhouette with ribbed collar, cuffs and hem, snap-button front closure, and embroidered '50' branding on the chest and back. Built as a statement outerwear piece for the Fifty Series lineup.",
+    "colours": [
+      "Black/White",
+      "Grey/Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fit": "True-to-size, structured fit.",
+    "materials": "[Wool-blend body, faux leather sleeves], [Imported]",
+    "careInstructions": "[Dry clean only]. [Do not iron on embroidery].",
+    "availability": "Limited",
+    "productStatus": "Limited",
+    "featured": true,
+    "newRelease": false,
+    "images": [
+      "https://picsum.photos/seed/fifty-varsity-jacket/800/1000",
+      "https://picsum.photos/seed/fifty-varsity-jacket-2/800/1000"
+    ],
+    "sizeGuideInfo": "True-to-size fit. Select your regular size for the intended fit."
+  }
+]
