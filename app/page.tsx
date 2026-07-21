@@ -8,7 +8,7 @@ import Image from "next/image";
 import ProductGrid from "@/components/ProductGrid";
 import LookbookGrid from "@/components/LookbookGrid";
 import EmailSignup from "@/components/EmailSignup";
-import { COLLECTIONS, getNewReleases, getProductBySlug } from "@/lib/products";
+import { getNewReleases, getProductBySlug } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "2Fitty Outfits | Original Streetwear and Matching Sets",
@@ -53,22 +53,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="mb-8 text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
-          Featured Collections
-        </h2>
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
-          {COLLECTIONS.map((c) => (
-            <CollectionCard
-              key={c.name}
-              title={c.name}
-              href={`/shop?q=${encodeURIComponent(c.name)}`}
-              imageSeed={c.imageSeed}
-            />
-          ))}
-        </div>
-      </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between">

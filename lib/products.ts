@@ -1,4 +1,4 @@
-import { CollectionName, Product } from "./types";
+import { Product } from "./types";
 import productsData from "@/content/products.json";
 
 // Product catalogue for 2Fitty Outfits.
@@ -23,28 +23,6 @@ import productsData from "@/content/products.json";
 // which stores uploads in public/images/uploads). See README for instructions.
 export const products: Product[] = (productsData as { products: Product[] }).products;
 
-export const COLLECTIONS: { name: CollectionName; description: string; imageSeed: string }[] = [
-  {
-    name: "2Fitty Core",
-    description: "Minimal everyday clothing with small 2F/2Fitty branding.",
-    imageSeed: "collection-2fitty-core",
-  },
-  {
-    name: "Fifty Series",
-    description: "Larger graphics, numbers, embroidery, and statement branding.",
-    imageSeed: "collection-fifty-series",
-  },
-  {
-    name: "After Hours",
-    description: "A darker collection in black, washed charcoal, grey, and muted tones.",
-    imageSeed: "collection-after-hours",
-  },
-  {
-    name: "Signature Sets",
-    description: "Matching combinations designed to be worn as a complete outfit.",
-    imageSeed: "collection-signature-sets",
-  },
-];
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
@@ -52,11 +30,7 @@ export function getProductBySlug(slug: string): Product | undefined {
 
 export function getRelatedProducts(product: Product, limit = 4): Product[] {
   return products
-    .filter(
-      (p) =>
-        p.slug !== product.slug &&
-        (p.category === product.category || p.collection === product.collection)
-    )
+    .filter((p) => p.slug !== product.slug && p.category === product.category)
     .slice(0, limit);
 }
 
@@ -68,9 +42,6 @@ export function getFeatured(limit = 8): Product[] {
   return products.filter((p) => p.featured).slice(0, limit);
 }
 
-export function getProductsByCollection(collection: CollectionName): Product[] {
-  return products.filter((p) => p.collection === collection);
-}
 
 // Matches the shop page's "Category" filter chip, where "All" means no
 // filtering. "New Releases" is a real category value on some products but
@@ -81,18 +52,11 @@ export function matchesCategory(product: Product, category: string): boolean {
   return product.category === category;
 }
 
-// Matches the shop page's "Collection" filter, where "Any" means no
-// filtering.
-export function matchesCollection(product: Product, collection: string): boolean {
-  if (!collection || collection === "Any") return true;
-  return product.collection === collection;
-}
 
-// Lenient multi-word text search across name, collection, category and
-// description. Used for the shop search box and for Featured Collection
-// links that need more granularity than the category filter chips.
+// Lenient multi-word text search across name, category and description.
+// Used for the shop search box.
 export function matchesQuery(product: Product, query: string): boolean {
-  const haystack = `${product.name} ${product.collection} ${product.category} ${product.shortDescription} ${product.description}`.toLowerCase();
+  const haystack = `${product.name} ${product.category} ${product.shortDescription} ${product.description}`.toLowerCase();
   return query
     .toLowerCase()
     .split(/\s+/)

@@ -19,15 +19,10 @@ export type ProductCategory =
   | "Outerwear"
   | "Accessories";
 
-// Collection names are intentionally kept in one place so they're easy to
-// rename later without touching every product entry.
-export type CollectionName = "2Fitty Core" | "Fifty Series" | "After Hours" | "Signature Sets";
-
 export interface Product {
   id: string;
   name: string;
   slug: string;
-  collection: CollectionName;
   category: ProductCategory;
   /** Price in CAD, stored as a plain number (e.g. 85 => "$85 CAD"). */
   price: number;

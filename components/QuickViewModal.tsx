@@ -61,7 +61,7 @@ export default function QuickViewModal({
           <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover" />
         </div>
         <div className="flex w-full flex-col gap-3 p-6 sm:w-1/2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-brand-silver">{product.collection}</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-silver">{product.category}</p>
           <h2 className="text-lg font-bold text-white">{product.name}</h2>
           <p className="text-lg font-bold text-white">${product.price} CAD</p>
           <p className="text-sm text-white/60 line-clamp-3">{product.shortDescription}</p>

@@ -9,7 +9,6 @@ import { useOrderBag } from "@/context/OrderBagContext";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/shop", label: "Shop" },
-  { href: "/collections", label: "Collections" },
   { href: "/lookbook", label: "Lookbook" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

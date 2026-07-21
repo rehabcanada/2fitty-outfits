@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductFilters, { FilterState } from "@/components/ProductFilters";
 import ProductGrid from "@/components/ProductGrid";
-import { products, matchesCategory, matchesCollection, matchesQuery } from "@/lib/products";
+import { products, matchesCategory, matchesQuery } from "@/lib/products";
 
 const ALL_SIZES = Array.from(new Set(products.flatMap((p) => p.sizes))).sort();
 const ALL_COLOURS = Array.from(new Set(products.flatMap((p) => p.colours))).sort();
@@ -17,7 +17,6 @@ export default function ShopClient() {
 
   const [filters, setFilters] = useState<FilterState>({
     category: initialCategory,
-    collection: "Any",
     search: initialQuery,
     size: "Any",
     colour: "Any",
@@ -33,7 +32,6 @@ export default function ShopClient() {
   const filtered = useMemo(() => {
     const result = products.filter((p) => {
       if (!matchesCategory(p, filters.category)) return false;
-      if (!matchesCollection(p, filters.collection)) return false;
       if (filters.search && !matchesQuery(p, filters.search)) return false;
       if (filters.size !== "Any" && !p.sizes.includes(filters.size)) return false;
       if (filters.colour !== "Any" && !p.colours.includes(filters.colour)) return false;

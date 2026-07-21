@@ -3,7 +3,6 @@ import Logo from "./Logo";
 
 const SHOP_LINKS = [
   { href: "/shop", label: "Shop" },
-  { href: "/collections", label: "Collections" },
   { href: "/lookbook", label: "Lookbook" },
 ];
 

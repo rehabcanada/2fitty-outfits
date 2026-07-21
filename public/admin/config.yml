@@ -41,10 +41,6 @@ collections:
               - { label: "ID", name: "id", widget: "string", hint: "Stable internal id, e.g. p11. Do not change on existing products." }
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Slug", name: "slug", widget: "string", hint: "URL-safe, e.g. core-heavyweight-hoodie" }
-              - label: "Collection"
-                name: "collection"
-                widget: "select"
-                options: ["2Fitty Core", "Fifty Series", "After Hours", "Signature Sets"]
               - label: "Category"
                 name: "category"
                 widget: "select"

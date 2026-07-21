@@ -68,7 +68,7 @@ export default function ProductDetailClient({
 
         <div className="flex flex-col gap-4">
           <p className="text-xs font-semibold uppercase tracking-widest2 text-brand-silver">
-            {product.collection}
+            {product.category}
           </p>
           <h1 className="text-3xl font-bold text-white">{product.name}</h1>
           <p className="text-2xl font-bold text-white">${product.price} CAD</p>

@@ -17,7 +17,6 @@ confirms directly with the buyer (via email/phone/Instagram).
 │   ├── page.tsx                 Homepage
 │   ├── globals.css              Tailwind base styles + focus-visible rules
 │   ├── shop/                    /shop -- catalogue with filters + search
-│   ├── collections/             /collections -- collection grid (2Fitty Core, Fifty Series, After Hours, Signature Sets)
 │   ├── lookbook/                /lookbook -- editorial lookbook page
 │   ├── product/[slug]/          /product/[slug] -- product detail page
 │   ├── about/                   /about
@@ -29,8 +28,8 @@ confirms directly with the buyer (via email/phone/Instagram).
 ├── components/                 Reusable UI components (Header, Footer, ProductCard, etc.)
 ├── context/OrderBagContext.tsx  React Context + localStorage-backed "Request Bag"
 ├── lib/
-│   ├── types.ts                 Product/Category/Collection/Availability types
-│   └── products.ts               Static product catalogue + collection/filter helpers
+│   ├── types.ts                 Product/Category/Availability types
+│   └── products.ts               Static product catalogue + filter helpers
 ├── public/                      Static assets (drop real logo/photos here)
 ├── netlify.toml                 Netlify build config (@netlify/plugin-nextjs)
 └── .env.example                 Environment variable template
@@ -110,7 +109,6 @@ matching the `Product` type in `lib/types.ts`:
   id: "p11",
   name: "New Product Name",
   slug: "new-product-name",       // used for /product/[slug] and must be unique
-  collection: "2Fitty Core",      // one of: 2Fitty Core, Fifty Series, After Hours, Signature Sets
   category: "Hoodies",            // one of: New Releases, Hoodies, Sweatshirts, Sweatpants, T-Shirts, Shorts, Matching Sets, Outerwear, Accessories
   price: 85,                      // CAD, plain number -- shown as "$85 CAD"
   description: "Full product description.",
@@ -135,9 +133,6 @@ homepage New Releases grid, product detail pages, and related-products logic
 all read from this same array automatically -- no other files need to
 change.
 
-Collection names (2Fitty Core, Fifty Series, After Hours, Signature Sets) are
-defined once in `lib/products.ts` (`COLLECTIONS`) so they're easy to rename
-later.
 
 ## Replacing Product Images
 

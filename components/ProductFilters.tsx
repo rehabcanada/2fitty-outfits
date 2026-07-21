@@ -13,13 +13,11 @@ const CATEGORY_CHIPS = [
   "Accessories",
 ];
 
-const COLLECTIONS = ["Any", "2Fitty Core", "Fifty Series", "After Hours", "Signature Sets"];
 const AVAILABILITIES = ["Any", "In Stock", "Limited", "Restocking", "Pre-Order", "Sold Out"];
 const SORT_OPTIONS = ["Featured", "Newest", "Price Low-High", "Price High-Low"];
 
 export interface FilterState {
   category: string;
-  collection: string;
   search: string;
   size: string;
   colour: string;
@@ -52,7 +50,7 @@ export default function ProductFilters({
           type="search"
           value={filters.search}
           onChange={(e) => onChange({ search: e.target.value })}
-          placeholder="Search by name or collection..."
+          placeholder="Search by name..."
           className="w-full max-w-md rounded-full border border-white/20 bg-brand-charcoal px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-white"
         />
       </div>
@@ -76,24 +74,6 @@ export default function ProductFilters({
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <div>
-          <label htmlFor="filter-collection" className="mb-1 block text-xs font-bold uppercase tracking-widest2 text-brand-silver">
-            Collection
-          </label>
-          <select
-            id="filter-collection"
-            value={filters.collection}
-            onChange={(e) => onChange({ collection: e.target.value })}
-            className="w-full rounded-lg border border-white/20 bg-brand-charcoal px-3 py-2 text-sm text-white focus:border-white"
-          >
-            {COLLECTIONS.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
-
         <div>
           <label htmlFor="filter-size" className="mb-1 block text-xs font-bold uppercase tracking-widest2 text-brand-silver">
             Size
